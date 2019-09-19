@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <script>
+ var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Password Match';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password does not match';
+  }
+}
+    </script>
+   <center>
+        <div>
+                <form action="#" style="max-width:450px;" id="mainer" method="POST">
+                    <div>
+                        <h3>MEMBERSHIP SIGN UP</h3>
+                    </div>
+                    <div>
+                        <input class="fill" type="text" name="username" placeholder="USERNAME" maxlength="20" required><br>
+                        <input class="fill" type="email" name="email" placeholder="EMAIL" required><br>
+                        <input class="fill" type="password" id="password" name="password" placeholder="PASSWORD" required minlength="8" maxlength="12" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onkeyup='check();'>
+                        <input class="fill" type="password" id="confirm_password" name="confirm_password" placeholder="CONFIRM PASSWORD" required minlength="8" maxlength="12" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must match" onkeyup='check();' style="margin-bottom: 20px;"><br>              
+                        <span id='message'></span>
+                    </div>
+        
+                    <div>
+                        <input type="submit" name="submit" value="SIGN UP" id="submit">
+                    </div>
+
+                    <div>
+                        Already a member? 
+                        <a href="index.html"><b>Log In</b></a>
+                    </div>
+                </form>
+            </div>
+   </center>
+</body>
+</html>
